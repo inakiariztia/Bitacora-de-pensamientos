@@ -1,0 +1,36 @@
+let JB;
+
+
+// vamos a cambiar la posicion de akrila
+let posX = 0;
+let posY = 0;
+
+// variable para guardar la dirección
+let dirX = 1;
+
+function setup() {
+  createCanvas(400, 400);
+  don = loadImage("./donFrancis.jpg");
+  JB = loadImage("./Jb.jpeg");
+}
+
+ function draw() {
+  background(220);
+  image(JB, posX, posY, 100, 100);
+  
+  //actualizamos la posicion de akrila
+  //dir es hacia la derecha si es 1
+  // hacia la izquierda si es -1
+  posX = posX + 5 * dirX;
+  
+  if (posX > width*4/5  - 100){
+    dirX = -1; //cambia a direccion negativa
+  }
+  if (posX < width*1/5){
+    dirX =  1; //cambia a direccion positiva
+  }
+  
+  line(width*1/5, 0, width*1/5,height);
+  line(width*4/5, 0, width*4/5,height);
+  
+ }
